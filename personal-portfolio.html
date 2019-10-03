@@ -2,25 +2,46 @@
 <html>
   <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   <style>
-    html {
+html {
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
+    
     #welcome-section {
-      background: aqua;
+      background: linear-gradient(65deg, #000000, #363636);
       max-width: 100%;
       height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 5em;
+      margin-bottom: 0px;
+      color: white;
+    }
+
+    p {
+      margin-top: 0px;
+      font-size: 20px;
+      font-style: italic;
+      color: white;
     }
 
     body {
       margin: 0;
     }
 
-    h1 {
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    h3, h4 {
+      text-align: center;
+      margin-top: 0px;
+      padding-top: 40px;
+      font-size: 2em;
+    }
+
+    hr {
+      color: white;
     }
 
     .bullets {
@@ -29,7 +50,7 @@
 
     #navbar {
       position: fixed;
-      background-color: coral;
+      background-color: #00008B;
       width: 100%;
     }
 
@@ -39,49 +60,119 @@
     }
 
     .bullets > li {
-      padding-right: 35px;
-      font-size: 20px;
-      font-weight: bold;
+      padding-right: 40px;
+      font-size: 25px;
+      /* font-weight: bold; */
     }
 
     .bullets > li > a {
       color: white;
       text-decoration: none;
     }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-bottom: 2em;
+    }
+
+    .container > div {
+      width: 38%;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 350px;
+      border-radius: 10px
+    }
+
+    #projects {
+      background: #1874CD;
+    }
+
+    #contact {
+      background: #9C9C9C;
+    }
+
+    .icon-img {
+      width: 15%;
+      padding:20px;
+    }
+    
+    @media only screen and (max-width: 991px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .container > div {
+        width: 80%
+      }
+
+      .project-img {
+        height: 400px;
+      }
+      
+      h4 {
+        float: none;
+      }
+
+      .icon-img {
+        width: 20%;
+        padding: 0 60px 0 60px;
+      }
+    }
   </style>
 
   <nav id="navbar">
     <ul class="bullets">
       <li><a href="#welcome-section">Home</a></li>
-      <li><a href="#projects">Works</a></li>
-      <li><a href="#profile-link">Contact</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
   <head>
     <section id="welcome-section">
-      <h1>Hi, this is my Portfolio</h1>
+      <div>
+        <h1>Hi, <br>this is my Portfolio.</h1>
+        <p>my name is Rodrigo, a web Developper</p>
+      </div>
     </section>
   </head>
 
   <body>
     <section id="projects">
+      <h3>Take a look at some of my projects!</h3>
       <div class="container">
-        <h3 class="project-tile">Take a look at some of my projects!</h3>
-        <a href="#">
-          <div>
-            PROJECT 1
-          </div>
-        </a>
-        <a href="#">
-          <div>
-            PROJECT 2
-          </div>
-        </a>
+        <div>
+          <a href="https://codepen.io/mrrachadel/full/BaBVzEK" target="_blank" class="project-tile">
+            <img class="project-img" src="https://image.shutterstock.com/image-vector/icons-landing-page-advertising-information-600w-1187308510.jpg" alt="A Product Landing Page">
+            <hr>
+          </a>
+          <p>A Product Landing Page</p>
+        </div>
+        <div>
+          <a href="http://codepen.io/mrrachadel/full/yLBKWoY" target="_blank" class="project-tile">
+            <img src="data:image/png;base64,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" alt="A Tribute Page" class="project-img">
+            <hr>
+          </a>
+          <p>A Tribute Page: Justin Trudeau</p>
+        </div>
       </div>
     </section>
-    <section id="profile-link">
-      <a href="http://github.com/mmrachadel">GitHub</a>
+    <section id="contact">
+      <div class="container" style="padding-bottom: 0px;">
+        <div>
+          <h4 style="float: right">Contact me:</h4>
+        </div> 
+        <div>
+          <a id="profile-link" href="https://github.com/mrrachadel" target="_blank"><img class="icon-img" src="https://icon-library.net/images/github-icon-white/github-icon-white-25.jpg" alt=""></a> 
+          <a href="https://www.linkedin.com/in/rodrigo-rachadel/"><img src="https://image.flaticon.com/icons/png/512/61/61109.png" alt="" class="icon-img"></a>
+        </div>
+      </div>
     </section>
   </body>
 </html>
